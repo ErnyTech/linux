@@ -1,0 +1,25 @@
+// SPDX-License-Identifier: GPL-2.0-only
+
+/dts-v1/;
+
+#include "msm8996.dtsi"
+#include "pm8994.dtsi"
+#include "pmi8994.dtsi"
+
+/ {
+    model = "OnePlus 3";
+    compatible = "oneplus,oneplus3", "qcom,msm8996";
+    qcom,msm-id = <246 0x30001>;
+    qcom,pmic-id = <0x20009 0x10013 0x00 0x00>;
+    qcom,board-id = <8 0 15801 15>, <8 0 15801 16>;
+    
+    reserved-memory {
+        ramoops {
+            compatible = "ramoops";
+            reg = <0 0xac000000 0 0x200000>;
+            record-size = <0x20000>;
+            console-size = <0x100000>;
+            pmsg-size = <0x80000>;
+        };
+    };
+};
